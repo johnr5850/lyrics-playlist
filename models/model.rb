@@ -42,8 +42,8 @@ class Playlist
     
         # fill the @songs array with new instances of the Song class
         playlist.tracks.each do |track|
-            @songs << Songs.new(track.name, track.artists.first.name, track.album.images.first["url"])
-        
+            @songs << Song.new(track.name, track.artists.first.name, track.album.images.first["url"])
+        end
     end
     
     def get_lyrics
@@ -59,4 +59,4 @@ spotify_top_tracks_playlist = RSpotify::Playlist.find("spotify","5FJXhjdILmRA2z5
 pp spotify_top_tracks_playlist.tracks.first
 
 # use this to test out the classes
-# spotify_top_tracks = Playlist.new("spotify","5FJXhjdILmRA2z5bvz4nzf")
+spotify_top_tracks = Playlist.new("spotify","5FJXhjdILmRA2z5bvz4nzf")
